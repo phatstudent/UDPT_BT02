@@ -2,7 +2,7 @@
 
 /*set your website title*/
 
-define('WEBSITE_TITLE', "My Website");
+define('WEBSITE_TITLE', "Phat");
 
 /*set database variables*/
 

@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= $data['page_title']. " | " .WEBSITE_TITLE ?></title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1 /css/ionicons.min.css"> -->
+
 
     <link rel="stylesheet" href="<?=ASSETS?>football/css/my_css.css">
     <link rel="stylesheet" href="<?=ASSETS?>football/css/header.css">
     <link rel="stylesheet" href="<?=ASSETS?>football/css/footer.css">
+    
     <!-- CUSTOM STYLE -->      
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&subset=latin-ext" rel="stylesheet"> 
+
     
   </head>
 
@@ -25,7 +30,7 @@
         <!-- Top Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?=ROOT?>home">
               <img class="logo-before" style="max-width: 70px;" src="<?=ASSETS?>football/img/logo-dark.png" alt="">
             </a>
             
@@ -53,7 +58,7 @@
                               <div class="col-lg-6 mb-4">
                                 <h6 class="font-weight-bold text-uppercase">Club</h6>
                                 <ul class="list-unstyled">
-                                  <li class="nav-item"><a href="" class="nav-link text-small pb-0 ">Unique Features</a></li>
+                                  <li class="nav-item"><a href="<?=ROOT?>clubs" class="nav-link text-small pb-0 ">show all</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -63,16 +68,13 @@
                     </div>
                   </div>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="<?=ROOT?>home">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?=ROOT?>about">About</a>
+                  <li class="nav-item">
+                  <a class="nav-link" href="http://www.arkism.me">About</a>
                 </li>
 
                 <?php if(!isset($_SESSION['user_name'])): ?>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?=ROOT?>login">Login</a>
+                    <a class="nav-link" href="<?=ROOT?>login">LogIn</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="<?=ROOT?>signup">SignUp</a>

@@ -103,7 +103,7 @@ body {
 
 <?php $this->view("football/layout/header", $data) ?>
 
-<div class="login-page"><h2>Sign Up</h2>
+<div class="login-page">
 <?php check_messenger()?>
   <div class="form">
     <form class="register-form" method="post">

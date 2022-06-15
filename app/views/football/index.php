@@ -8,7 +8,8 @@
           <header class="section background-white">
           </header>
         </article>
+        <h1 class="d-flex justify-content-center mb-5">Welcome to zone</h1>
       </main>
       
       <!-- FOOTER -->
-      <?php $this->view("football/layout/footer", $data) ?>
+<?php $this->view("football/layout/footer", $data) ?>
