@@ -2,8 +2,8 @@
 
 class Signup extends Controller{
     function index($a = '', $b = '', $c = ''){
-        $data["page_title"] = "signup";
 
+        $data["page_title"] = "signup";
         if(isset($_POST['email'])){
             $user = $this->loadModel('user');
             $user->signup($_POST);

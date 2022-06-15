@@ -2,6 +2,7 @@
 
 class Login extends Controller{
     function index($a = '', $b = '', $c = ''){
+        
         $data["page_title"] = "login";
         if(isset($_POST['email'])){
             $user = $this->loadModel('user');

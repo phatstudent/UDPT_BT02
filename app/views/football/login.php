@@ -90,7 +90,7 @@
   color: #EF3B3A;
 }
 body {
-  background: #76b852; /* fallback for old browsers */
+  background: #FFFFFF; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
   background: -moz-linear-gradient(right, #76b852, #8DC26F);
   background: -o-linear-gradient(right, #76b852, #8DC26F);
@@ -101,31 +101,31 @@ body {
 }
 </style>
 
-<?php $this->view("football/header", $data) ?>
+<?php $this->view("football/layout/header", $data) ?>
 
 <div class="login-page"><h2>Login</h2>
   <?php check_messenger()?>
   <div class="form">
-    <form class="register-form" method="post">
+    <!-- <form class="register-form" method="post">
       <input type="text" name="username" placeholder="name"/>
       <input type="password" name="password" placeholder="password"/>
       <input type="text" name="email" placeholder="email address"/>
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
+    </form> -->
     <form class="login-form" method="post">
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
       <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <!-- <p class="message">Not registered? <a href="#">Create an account</a></p> -->
     </form>
   </div>
 </div>
 
 <script>
-$('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
+  $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
 </script>
 
-<?php $this->view("football/footer", $data) ?>
+<?php $this->view("football/layout/footer", $data) ?>
