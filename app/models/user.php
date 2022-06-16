@@ -47,7 +47,7 @@ class User{
             $querry = "insert into users (username,password,email,url_address,date) values (:username,:password,:email,:url_address,:date)";
 
             $data = $DB->write($querry, $arr);
-            echo $data;
+
             if($data){
                 header("Location:". ROOT . "login");
                 die;

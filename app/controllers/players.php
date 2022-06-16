@@ -24,12 +24,18 @@ class Players extends Controller{
         $this->view("football/players", $data);
     }   
 
-    function AddPlayers(){
+    function AddPlayer(){
+
+        $football = $this->loadModel("football");
+
+        $result = $football->get_all_clubs();
 
         $data["page_title"] = "Add Player";
-        if(isset($_POST['added_player_id'])){
-            $user = $this->loadModel('football');
-            $user->add_one_player($_POST);
+        $data["selected_club_list"] = $result;
+
+        if(isset($_POST['added_player_FullName'])){
+            // $football = $this->loadModel('football');
+            $football->add_one_player($_POST);
         }
         
         $this->view("football/add_player", $data);

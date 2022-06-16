@@ -3,7 +3,7 @@
 <!-- MAIN -->
 <main role="main" class="scroll d-flex">
   <?php $this->view("football/layout/sidebar", $data) ?>
-  <div class="text-warning"><h1>Hello</h1></div>
+  <div class="text-warning mx-auto"><h1>This iz Trang Chu</h1></div>
 </main>
 
 <!-- FOOTER -->

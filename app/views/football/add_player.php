@@ -27,6 +27,17 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+/* .form input select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+} */
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -53,9 +64,9 @@
   color: #4CAF50;
   text-decoration: none;
 }
-.form .register-form {
+/* .form .register-form {
   display: none;
-}
+} */
 .container {
   position: relative;
   z-index: 1;
@@ -107,26 +118,23 @@ body {
 <?php check_messenger()?>
   <div class="form">
     <form class="register-form" method="post">
-      <input type="text" name="username" placeholder="name"/>
-      <input type="password" name="password" placeholder="password"/>
-      <input type="text" name="email" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>  
-    </form>
-    <form class="login-form" method="post">
-      <input type="text" name="username" placeholder="username"/>
-      <input type="password" name="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <input type="text" name="added_player_FullName" placeholder="Full Name"/>
+      <!-- <input type="text" name="added_player_ClubID" placeholder="Club ID"/> -->
+      <select name="added_player_ClubName" class="custom-select  mb-3" placeholder="Club ID" required>
+        <option>Club ID</option>
+        <?php if( !empty( $data['selected_club_list'])): ?>
+          <?php foreach($data['selected_club_list'] as $row): ?>
+            <option><?=$row->ClubName?></option>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </select>
+      <input type="text" name="added_player_Position" placeholder="Position"/>
+      <input type="text" name="added_player_Nationality" placeholder="Nationality"/>
+      <input type="text" name="added_player_Number" placeholder="Number"/>
+      <button>Add</button>
     </form>
   </div>
 </div>
 
-<script>
-  $('.message a').click(function(){
-    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-  });
-  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-</script>
 
 <?php $this->view("football/layout/footer", $data) ?>
