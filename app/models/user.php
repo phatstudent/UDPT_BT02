@@ -87,7 +87,7 @@ class User{
         unset($_SESSION['user_name']);
         unset($_SESSION['user_url']);
 
-        header("Location:". ROOT ."login");
+        header("Location:". ROOT ."home");
     }
 
 }

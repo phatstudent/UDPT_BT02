@@ -56,4 +56,32 @@ class Football{
 
         return false;
     }
+
+    function add_one_player($POST){
+                
+        $DB = new Database();
+
+        $_SESSION['error'] ="";
+        if(isset($POST['added_player_FullName'])){
+
+            $arr['FullName'] = $POST['added_player_FullName'];
+            $arr['ClubID '] = $POST['added_player_ClubID']; //need to select
+            $arr['Position'] = $POST['added_player_Position'];
+            $arr['Nationality'] = $POST['added_player_Nationality'];
+            $arr['Number'] = $POST['added_player_Number'];
+
+            $querry = "insert into users (FullName,ClubID,Position,Nationality,Number) values (:FullName,:ClubID,:Position,:Nationality,:Number)";
+
+            $data = $DB->write($querry, $arr);
+            echo $data;
+            if($data){
+                header("Location:". ROOT . "players");
+                die;
+            }
+
+        }else{
+            $_SESSION['error'] = "please enter a valid information of player";
+        }
+    }
+
 }
