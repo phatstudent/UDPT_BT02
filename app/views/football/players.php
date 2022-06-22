@@ -24,7 +24,7 @@
                 <?php foreach($data['players_list'] as $row): ?>
                 <tr>
                     <td><?=$row->PlayerID?></td>
-                    <td><?=$row->FullName?></td>
+                    <td><div edit_type="click"><?=$row->FullName?></div></td>
                     <td><?=$row->Position?></td>
                     <td><?=$row->Nationality?></td> 
                     <td><?=$row->Number?></td> 

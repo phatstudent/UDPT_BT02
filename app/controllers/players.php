@@ -39,9 +39,7 @@ class Players extends Controller{
         }
         
         $this->view("football/add_player", $data);
-
-        // header(('location:'.ROOT."players"));
-        // die;
+        
     }   
     
 }

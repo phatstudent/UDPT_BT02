@@ -29,6 +29,7 @@ class User{
         }else{
             $_SESSION['error'] = "please enter a valid username and password";
         }
+
     }
 
     function signup($POST){
@@ -44,7 +45,7 @@ class User{
             $arr['url_address'] = get_random_string_max(50);
             $arr['date'] = date("Y-m-d H:i:s");
 
-            $querry = "insert into users (username,password,email,url_address,date) values (:username,:password,:email,:url_address,:date)";
+            $querry = "insert into user (username,password,email,url_address,date) values (:username,:password,:email,:url_address,:date)";
 
             $data = $DB->write($querry, $arr);
 
