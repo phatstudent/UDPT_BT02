@@ -11,7 +11,7 @@ class User{
 
             $arr['username'] = $POST['username'];
             $arr['password'] = $POST['password'];
-            $querry = "select * from users where username = :username && password = :password limit 1";
+            $querry = "select * from user where username = :username && password = :password limit 1";
 
             $data = $DB->read($querry, $arr);
             
@@ -67,7 +67,7 @@ class User{
 
             $arr['user_url'] = $_SESSION['user_url'];
 
-            $querry = "select * from users where url_address = :user_url limit 1";
+            $querry = "select * from user where url_address = :user_url limit 1";
             $data = $DB->read($querry, $arr);
             if(is_array($data)){
                 //logged in

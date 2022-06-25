@@ -104,3 +104,79 @@ main {
 .form button:focus {
   background: #43a047;
 }
+
+
+
+/* Modal  */
+.modal .modal-header{
+  text-align: center;
+  background: #00CDCE;
+  font-size: 2.6em;
+  display: inline;
+  color:white;
+}
+.modal .modal-body img{
+  width: 100%;
+}
+
+.modal .modal-body p{
+  font-size: 15px;
+  text-align: left;
+  padding:  2em 2em 1em;
+  color:#999;
+  line-height: 2em;
+}
+.modal .modal-header .close {
+  color:#a0260f;
+  font-size: 1.2em;
+  padding: 1.95rem 1rem;
+  transition:all 0.5s;
+  text-shadow: none;
+  
+}
+.modal .modal-header .btn .close:hover{
+ 
+  opacity: 0.5;
+}
+.modal .modal-header .close:focus{
+  outline: none;
+}
+.editCreate{
+  margin-left: 10px;
+  margin-bottom:60px ;
+}
+
+.btn-dark {
+  color:#00CDCE;
+  font-size: 17px;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+  box-shadow: none !important;
+}
+.btn-dark:focus, .btn:focus{
+  box-shadow: none;
+  border:0px;
+  outline: none;
+ 
+}
+.btn span:focus{
+  box-shadow: none;
+  border:none;
+  outline: none !important;
+}
+.btn{
+  border-radius: 0;
+  border:0px;
+  box-shadow: none;
+  outline: none;
+}
+.btn-dark:hover{
+  border-color:black;
+  box-shadow: none;
+  color:yellowgreen;
+}
+
+.modal .my-btn{
+  /* opacity: 1 !important; */
+  opacity: 1;
+}

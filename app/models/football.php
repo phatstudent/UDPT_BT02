@@ -132,7 +132,7 @@ class Football
             $arr['Nationality'] = $POST['added_player_Nationality'];
             $arr['Number'] = $POST['added_player_Number'];
 
-            show($arr);
+            // show($arr);
 
             $querry = "insert into player (PlayerID,FullName,ClubID,Position,Nationality,Number) values (:PlayerID,:FullName,:ClubID,:Position,:Nationality,:Number)";
 
@@ -188,4 +188,58 @@ class Football
             $_SESSION['error'] = "please enter a valid information of player";
         }
     }
+
+    function delete_one_player($PlayerID)
+    {
+
+        $querry = "DELETE FROM player WHERE PlayerID = $PlayerID";
+
+        $DB = new Database();
+
+        $data = $DB->write($querry);
+
+        if ($data) {
+            header("Location:" . ROOT . "players");
+            die;
+        }
+
+        return $data;
+    }
+
+    function update_one_player($POST)
+    {
+
+        $DB = new Database();
+        // show($arr);
+        $_SESSION['error'] = "";
+        if (isset($POST['submit'])) {
+
+            $arr['PlayerID'] = $POST['updated_PlayerID'];
+            $arr["FullName"] = $POST['updated_FullName'];
+            $arr['ClubID'] = $this->get_ClubID_with_name($POST['updated_ClubName']); //need to select
+            $arr['Position'] = $POST['updated_Position'];
+            $arr['Nationality'] = $POST['updated_Nationality'];
+            $arr['Number'] = $POST['updated_Number'];
+
+            show($arr);
+
+            $querry = "UPDATE player 
+            SET FullName = :FullName, ClubID = :ClubID, Position = :Position, Nationality = :Nationality, Number = :Number
+            WHERE PlayerID = :PlayerID";
+
+            $data = $DB->write($querry, $arr);
+
+            if ($data) {
+                header("Location:" . ROOT . "players");
+                die;
+            }else{
+                $_SESSION['error'] = "update to database fail";
+            }
+
+
+        } else {
+            $_SESSION['error'] = "wrong infor";
+        }
+    }
+
 }

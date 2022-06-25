@@ -4,10 +4,20 @@ class Players extends Controller{
     function index(){
         $data["page_title"] = "Players";
 
-        $posts = $this->loadModel("football");
-        $result = $posts->get_all_players();
+
+        $football = $this->loadModel("football");
+        $result = $football->get_all_players();
+
+        $data["selected_club_list"] = $football->get_all_clubs();
 
         $data['players_list'] = $result;
+
+        //update player
+        if(isset($_POST['submit'])){
+            show($_POST);
+            $football->update_one_player($_POST);
+        }
+
 
         $this->view("football/players", $data);
     }   
@@ -41,5 +51,13 @@ class Players extends Controller{
         $this->view("football/add_player", $data);
         
     }   
+
+    function DeLetePlayer($PlayerID=''){
+
+        $football = $this->loadModel("football");
+        $football->delete_one_player($PlayerID);
+        
+    }   
+
     
 }
