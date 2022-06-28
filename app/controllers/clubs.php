@@ -4,10 +4,20 @@ class Clubs extends Controller{
     function index(){
         $data["page_title"] = "Clubs";
 
-        $posts = $this->loadModel("football");
-        $result = $posts->get_all_clubs();
-
+        $football = $this->loadModel("football");
+        $result = $football->get_all_clubs();
         $data['clubs_list'] = $result;
+
+        $result = $football->get_all_stadiums();
+        $data["option_stadiums_list"] = $result;
+
+        $result = $football->get_all_coachs();
+        $data["option_coachs_list"] = $result;
+
+        if(isset($_POST['submit'])){
+            show($_POST);
+            $football->update_one_club($_POST);
+        }
 
         $this->view("football/clubs", $data);
     }   

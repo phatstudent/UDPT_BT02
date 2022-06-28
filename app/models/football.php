@@ -24,7 +24,7 @@ class Football
     function get_all_clubs()
     {
 
-        $querry = 'select cb.ClubID, cb.ClubName, sm.SName, ch.CFullName 
+        $querry = 'select cb.ClubID, cb.ClubName, cb.Shortname, sm.SName, ch.CFullName, cb.StadiumID, cb.CoachID 
         from club cb, stadium sm, coach ch
         where cb.StadiumID = sm.StadiumID and cb.CoachID = ch.CoachID
         order by ClubID asc';
@@ -257,5 +257,40 @@ class Football
         }
 
         return $data;
+    }
+
+    function update_one_club($POST)
+    {
+
+        $DB = new Database();
+        // show($arr);
+        $_SESSION['error'] = "";
+        if (isset($POST['submit'])) {
+
+            $arr['ClubID'] = $POST['updated_ClubID'];
+            $arr['ClubName'] = $POST['updated_ClubName'];
+            $arr['Shortname'] = $POST['updated_ShortName'];
+            $arr['StadiumID'] = $POST['updated_Stadium'];
+            $arr['CoachID'] = $POST['updated_Coach'];
+
+            show($arr);
+
+            $querry = "UPDATE club 
+            SET ClubName = :ClubName, Shortname = :Shortname, StadiumID = :StadiumID, CoachID = :CoachID
+            WHERE ClubID = :ClubID";
+
+            $data = $DB->write($querry, $arr);
+
+            if ($data) {
+                header("Location:" . ROOT . "clubs");
+                die;
+            }else{
+                $_SESSION['error'] = "update to database fail";
+            }
+
+
+        } else {
+            $_SESSION['error'] = "wrong infor";
+        }
     }
 }

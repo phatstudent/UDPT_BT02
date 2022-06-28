@@ -34,7 +34,9 @@
                             <td><?= $row->Number ?></td>
                             <td><?= $row->ClubName ?></td>
                             <!-- <?php show(json_encode($row))?> -->
-            
+                            <td><a data-toggle="modal" detaches=<?=str_replace(" ","__",json_encode($row))?> data-target="#update_player">Update</a> 
+
+                            <a data-val=<?=$row->PlayerID?> data-toggle="modal" data-target="#deletePlayerConfirm">Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -81,7 +83,7 @@
                         <input id="Number" type="text" name="updated_Number" placeholder="">
                     </div>
                     <label for="updated_ClubName">Club Name</label>
-                    <select name="updated_ClubName" class="custom-select" placeholder="Club ID" >
+                    <select name="updated_ClubName" class="custom-select" placeholder="" >
                     <option id="ClubName" value=""></option>
                     <?php if (!empty($data['selected_club_list'])) : ?>
                         <?php foreach ($data['selected_club_list'] as $row) : ?>
