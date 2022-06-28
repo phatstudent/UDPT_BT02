@@ -32,11 +32,17 @@
                             <td><?= $row->Position ?></td>
                             <td><?= $row->Nationality ?></td>
                             <td><?= $row->Number ?></td>
-                            <td><?= $row->ClubName ?></td>
+                            <td class="btnUpdate"><?= $row->ClubName ?></td>
                             <!-- <?php show(json_encode($row))?> -->
-                            <td><a data-toggle="modal" detaches=<?=str_replace(" ","__",json_encode($row))?> data-target="#update_player">Update</a> 
+                            <td>
+                             <button class="btn btn-dark">
+                             <a data-toggle="modal" detaches=<?=str_replace(" ","__",json_encode($row))?> data-target="#update_player" >Update</a> 
 
-                            <a data-val=<?=$row->PlayerID?> data-toggle="modal" data-target="#deletePlayerConfirm">Delete</a></td>
+                             </button>   
+                             <button class="btn btn-danger">
+                             <a data-val=<?=$row->PlayerID?> data-toggle="modal" data-target="#deletePlayerConfirm">Delete</a>
+                             </button>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
