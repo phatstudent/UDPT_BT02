@@ -34,9 +34,7 @@
                             <td><?= $row->Number ?></td>
                             <td><?= $row->ClubName ?></td>
                             <!-- <?php show(json_encode($row))?> -->
-                            <td><a data-toggle="modal" detaches=<?=str_replace(" ","__",json_encode($row))?> data-target="#update_player">Update</a> 
-
-                            <a data-val=<?=$row->PlayerID?> data-toggle="modal" data-target="#deletePlayerConfirm">Delete</a></td>
+            
                         </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>

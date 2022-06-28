@@ -33,4 +33,11 @@ class Clubs extends Controller{
         $this->view("football/add_club", $data);
         
     }   
+
+    function DeLeteClub($ClubID=''){
+
+        $football = $this->loadModel("football");
+        $football->delete_one_club($ClubID);
+        
+    }   
 }

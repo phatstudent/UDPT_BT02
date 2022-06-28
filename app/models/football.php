@@ -242,4 +242,20 @@ class Football
         }
     }
 
+    function delete_one_club($ClubID)
+    {
+
+        $querry = "DELETE FROM club WHERE ClubID = $ClubID";
+
+        $DB = new Database();
+
+        $data = $DB->write($querry);
+
+        if ($data) {
+            header("Location:" . ROOT . "clubs");
+            die;
+        }
+
+        return $data;
+    }
 }
