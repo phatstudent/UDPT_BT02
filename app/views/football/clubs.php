@@ -29,7 +29,7 @@
                             <td>
                                 <a data-toggle="modal" detaches=<?= str_replace(" ", "__", json_encode($row)) ?> data-target="#update_player">Update</a>
 
-                                <a data-val=<?= $row->ClubID ?> data-toggle="modal" data-target="#deleteClubConfirm">Delete</a>
+                                <!-- <a data-val=<?= $row->ClubID ?> data-toggle="modal" data-target="#deleteClubConfirm">Delete</a> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>
