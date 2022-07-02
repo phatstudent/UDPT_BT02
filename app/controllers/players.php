@@ -6,11 +6,11 @@ class Players extends Controller{
 
 
         $football = $this->loadModel("football");
+
         $result = $football->get_all_players();
+        $data['players_list'] = $result;
 
         $data["selected_club_list"] = $football->get_all_clubs();
-
-        $data['players_list'] = $result;
 
         //update player
         if(isset($_POST['submit'])){
