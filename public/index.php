@@ -3,4 +3,4 @@ session_start();
 
 require "../app/init.php";
 
-$app = new app();
+$app = new App();
