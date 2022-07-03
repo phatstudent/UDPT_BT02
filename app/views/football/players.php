@@ -15,7 +15,7 @@
                     <th scope="col">Full name</th>
                     <th scope="col">Position</th>
                     <th scope="col">Nationality</th>
-                    <th scope="col">Number</th>
+                     <th scope="col">Number</th>
                     <th scope="col">Club</th>
                     <th scope="col">Option</th>
                 </tr>

@@ -189,8 +189,24 @@ class Football
         }
     }
 
+    function deletematchplayers($ID)
+    {
+        $query = "delete from match_players where PlayerID = $ID";
+        $DB = new Database();
+        $tmp = $DB->write($query);
+    }
+    function deletematchgoals($ID)
+    {
+        $query = "delete from match_goals where PlayerID = $ID";
+        $DB = new Database();
+        $tmp = $DB->write($query);
+    }
+
     function delete_one_player($PlayerID)
     {
+
+        $this->deletematchplayers($PlayerID);
+        $this->deletematchgoals($PlayerID);
 
         $querry = "DELETE FROM player WHERE PlayerID = $PlayerID";
 
