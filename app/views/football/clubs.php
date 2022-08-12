@@ -27,8 +27,9 @@
                             <td><?= $row->SName ?></td>
                             <td><?= $row->CFullName ?></td>
                             <td>
+                            <button class="btn btn-dark">
                                 <a data-toggle="modal" detaches=<?= str_replace(" ", "__", json_encode($row)) ?> data-target="#update_player">Update</a>
-
+                            </button>
                                 <!-- <a data-val=<?= $row->ClubID ?> data-toggle="modal" data-target="#deleteClubConfirm">Delete</a> -->
                             </td>
                         </tr>
@@ -43,14 +44,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                Players
+                Clubs
                 <button type="button" class="close my-btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <h1>
-                    Update player
+                    Update club
                 </h1>
 
                 <form method="POST">

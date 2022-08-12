@@ -8,7 +8,7 @@
     <form class="register-form" method="post">
       <input type="text" name="username" placeholder="name"/>
       <input type="password" name="password" placeholder="password"/>
-      <input type="text" name="email" placeholder="email address"/>
+      <input type="text" name="email" placeholder="email address" hidden="true"/>
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>  
     </form>
