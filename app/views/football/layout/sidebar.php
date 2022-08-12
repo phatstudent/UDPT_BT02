@@ -16,6 +16,7 @@
             <li> <a href="#" data-toggle="collapse" data-target="#players" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Players </span> <span class="fa fa-chevron-left pull-right"></span> </a>
                 <ul class="sub-menu collapse" id="players">
                     <li><a href="<?=ROOT?>players">Show all</a></li>
+                    <li><a href="<?=ROOT?>players/search">Search Player</a></li>
                     <li><a href="<?=ROOT?>players/AddPlayer">Add players</a></li>
                 </ul>
             </li>
